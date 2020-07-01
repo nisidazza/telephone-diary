@@ -22,9 +22,9 @@ namespace TelephoneDiary
 
         private void Phone_Load(object sender, EventArgs e)
         {
-           /* Example of how to change cursor's focus
-            ActiveControl = textBox2;
-            textBox2.Focus();*/
+            /* Example of how to change cursor's focus
+             ActiveControl = textBox2;
+             textBox2.Focus();*/
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -70,7 +70,15 @@ namespace TelephoneDiary
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            connection.Open();
+            SqlCommand cmd = new SqlCommand(@"INSERT INTO dbo.Mobiles
+            (FirstName,LastName,Mobile,Email,Category)
+            VALUES   
+            ('" + textBox1.Text + "', '" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + comboBox1.Text + "')", connection);
+
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
         }
 
 
