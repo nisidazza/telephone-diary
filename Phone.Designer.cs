@@ -50,7 +50,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 44);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 5;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -60,7 +60,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 44);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 6;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -71,7 +71,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(437, 29);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
@@ -81,7 +81,7 @@
             this.textBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(437, 29);
-            this.textBox2.TabIndex = 3;
+            this.textBox2.TabIndex = 1;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
@@ -91,7 +91,7 @@
             this.textBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(437, 29);
-            this.textBox3.TabIndex = 4;
+            this.textBox3.TabIndex = 2;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
@@ -101,7 +101,7 @@
             this.textBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(437, 29);
-            this.textBox4.TabIndex = 5;
+            this.textBox4.TabIndex = 3;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // dataGridView1
@@ -111,7 +111,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(440, 288);
-            this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.TabIndex = 12;
             // 
             // label1
             // 
@@ -120,7 +120,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 25);
-            this.label1.TabIndex = 8;
+            this.label1.TabIndex = 7;
             this.label1.Text = "First Name :  ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -161,7 +161,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 25);
-            this.label5.TabIndex = 12;
+            this.label5.TabIndex = 8;
             this.label5.Text = "Last Name :  ";
             // 
             // comboBox1
@@ -176,7 +176,7 @@
             this.comboBox1.Location = new System.Drawing.Point(242, 299);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(437, 33);
-            this.comboBox1.TabIndex = 13;
+            this.comboBox1.TabIndex = 4;
             // 
             // Phone
             // 
