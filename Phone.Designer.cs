@@ -128,6 +128,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(98, 256);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(772, 288);
             this.dataGridView1.TabIndex = 12;
             // 
