@@ -20,11 +20,61 @@ namespace TelephoneDiary
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Clear();
+            textBox3.Text = "";
+            textBox4.Clear();
+            comboBox1.SelectedIndex = -1;
+            //cursor focusing on textBox1 
+            textBox1.Focus();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand cmd = new SqlCommand(@"INSERT INTO dbo.Mobiles
+            (FirstName,LastName,Mobile,Email,Category)
+            VALUES   
+            ('" + textBox1.Text + "', '" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + comboBox1.Text + "')", connection);
+
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+            MessageBox.Show("Your new contact has been successfully saved!");
+            DisplayContactsInfo();
+        }
+
+        void DisplayContactsInfo()
+        {
+            //SqlDataAdapter automatically open and close the connection
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM dbo.Mobiles", connection);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.Rows.Clear();
+            //loop through each table's row
+            foreach (DataRow item in dt.Rows)
+            {
+                int newRow = dataGridView1.Rows.Add();
+                dataGridView1.Rows[newRow].Cells[0].Value = item[0].ToString();
+                dataGridView1.Rows[newRow].Cells[1].Value = item[1].ToString();
+                dataGridView1.Rows[newRow].Cells[2].Value = item[2].ToString();
+                dataGridView1.Rows[newRow].Cells[3].Value = item[3].ToString();
+                dataGridView1.Rows[newRow].Cells[4].Value = item[4].ToString();
+
+            }
+
+
+        }
+
         private void Phone_Load(object sender, EventArgs e)
         {
             /* Example of how to change cursor's focus
              ActiveControl = textBox2;
              textBox2.Focus();*/
+
+            DisplayContactsInfo();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -56,32 +106,6 @@ namespace TelephoneDiary
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            textBox2.Clear();
-            textBox3.Text = "";
-            textBox4.Clear();
-            comboBox1.SelectedIndex = -1;
-            //cursor focusing on textBox1 
-            textBox1.Focus();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            connection.Open();
-            SqlCommand cmd = new SqlCommand(@"INSERT INTO dbo.Mobiles
-            (FirstName,LastName,Mobile,Email,Category)
-            VALUES   
-            ('" + textBox1.Text + "', '" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + comboBox1.Text + "')", connection);
-
-            cmd.ExecuteNonQuery();
-
-            connection.Close();
-            MessageBox.Show("Your new contact has been successfully saved!");
-        }
-
 
         private void button3_Click(object sender, EventArgs e)
         {
