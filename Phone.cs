@@ -20,6 +20,16 @@ namespace TelephoneDiary
             InitializeComponent();
         }
 
+
+        private void Phone_Load(object sender, EventArgs e)
+        {
+            /* Example of how to change cursor's focus
+             ActiveControl = textBox2;
+             textBox2.Focus();*/
+
+            DisplayContactsInfo();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
@@ -36,13 +46,25 @@ namespace TelephoneDiary
             connection.Open();
             SqlCommand cmd = new SqlCommand(@"INSERT INTO dbo.Mobiles
             (FirstName,LastName,Mobile,Email,Category)
-            VALUES   
-            ('" + textBox1.Text + "', '" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + comboBox1.Text + "')", connection);
+            VALUES   ('" + textBox1.Text + "', '" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + comboBox1.Text + "')", connection);
 
             cmd.ExecuteNonQuery();
 
             connection.Close();
             MessageBox.Show("Your new contact has been successfully saved!");
+            DisplayContactsInfo();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand cmd = new SqlCommand(@"DELETE FROM dbo.Mobiles
+            WHERE   (Mobile = '" + textBox3.Text + "')", connection);
+
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+            MessageBox.Show("Your contact has been successfully deleted!");
             DisplayContactsInfo();
         }
 
@@ -75,15 +97,6 @@ namespace TelephoneDiary
             comboBox1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
         }
 
-        private void Phone_Load(object sender, EventArgs e)
-        {
-            /* Example of how to change cursor's focus
-             ActiveControl = textBox2;
-             textBox2.Focus();*/
-
-            DisplayContactsInfo();
-        }
-
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
@@ -114,10 +127,7 @@ namespace TelephoneDiary
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
