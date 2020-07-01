@@ -71,6 +71,7 @@ namespace TelephoneDiary
             textBox3.Text = "";
             textBox4.Clear();
             comboBox1.SelectedIndex = -1;
+            //cursor focusing on textBox1 
             textBox1.Focus();
         }
     }
