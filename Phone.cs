@@ -19,7 +19,9 @@ namespace TelephoneDiary
 
         private void Phone_Load(object sender, EventArgs e)
         {
-
+           /* Example of how to change cursor's focus
+            ActiveControl = textBox2;
+            textBox2.Focus();*/
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -50,6 +52,26 @@ namespace TelephoneDiary
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Clear();
+            textBox3.Text = "";
+            textBox4.Clear();
+            comboBox1.SelectedIndex = -1;
+            textBox1.Focus();
         }
     }
 }
