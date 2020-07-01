@@ -110,6 +110,25 @@ namespace TelephoneDiary
             comboBox1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
         }
 
+        private void textBox5_TextChanged_1(object sender, EventArgs e)
+        {
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM dbo.Mobiles WHERE (Mobile LIKE '%" + textBox5.Text + "%') OR (LastName LIKE '%" + textBox5.Text + "%' ) OR (FirstName LIKE '%" + textBox5.Text + "%' )", connection);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.Rows.Clear();
+            //loop through each table's row
+            foreach (DataRow item in dt.Rows)
+            {
+                int newRow = dataGridView1.Rows.Add();
+                dataGridView1.Rows[newRow].Cells[0].Value = item[0].ToString();
+                dataGridView1.Rows[newRow].Cells[1].Value = item[1].ToString();
+                dataGridView1.Rows[newRow].Cells[2].Value = item[2].ToString();
+                dataGridView1.Rows[newRow].Cells[3].Value = item[3].ToString();
+                dataGridView1.Rows[newRow].Cells[4].Value = item[4].ToString();
+
+            }
+        }
+
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
