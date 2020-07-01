@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TelephoneDiary
 {
-    public partial class Form1 : Form
+    public partial class Phone : Form
     {
-        public Form1()
+        public Phone()
         {
             InitializeComponent();
         }
