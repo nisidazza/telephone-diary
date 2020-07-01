@@ -68,6 +68,19 @@ namespace TelephoneDiary
             DisplayContactsInfo();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand cmd = new SqlCommand(@"UPDATE dbo.Mobiles
+            SET FirstName = '" + textBox1.Text + "', LastName = '" + textBox2.Text + "', Mobile = '" + textBox3.Text + "', Email = '" + textBox4.Text + "', Category = '" + comboBox1.Text + "' WHERE (Mobile = '" + textBox3.Text + "')", connection);
+
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+            MessageBox.Show("Your new contact has been successfully updated!");
+            DisplayContactsInfo();
+        }
+
         void DisplayContactsInfo()
         {
             //SqlDataAdapter automatically open and close the connection
@@ -127,11 +140,5 @@ namespace TelephoneDiary
 
         }
 
-
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
