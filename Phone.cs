@@ -79,6 +79,7 @@ namespace TelephoneDiary
             cmd.ExecuteNonQuery();
 
             connection.Close();
+            MessageBox.Show("Your new contact has been successfully saved!");
         }
 
 
